@@ -1,59 +1,93 @@
-# NasaPostingDay
+# NASA Image of the Day
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
+A modern web application that displays NASA's Astronomy Picture of the Day (APOD) in an elegant, infinite-scrolling feed.
 
-## Development server
+![alt text](image.png)
 
-To start a local development server, run:
+## Features
+
+- **Infinite Scrolling**: Automatically loads older images as you scroll down
+- **Expandable Content**: Click "Read more" to expand the full explanation of each image
+- **Responsive Design**: Optimized for both desktop and mobile viewing
+- **Modern UI**: Clean interface with glass morphism styling and smooth animations
+
+## Technologies Used
+
+- **Angular**: Frontend framework
+- **Angular Signals**: For reactive state management
+- **TailwindCSS**: For styling
+- **NASA APOD API**: Source for the astronomy images and data
+
+## How It Works
+
+1. The application fetches the most recent astronomy pictures from NASA's APOD API
+2. Images are displayed in a chronological feed with the most recent at the top
+3. As you scroll to the bottom, older images are automatically loaded
+4. Clicking "Read more" expands the truncated descriptions
+
+## API Details
+
+This project uses NASA's Astronomy Picture of the Day (APOD) API:
+
+- Base URL: `https://api.nasa.gov/planetary/apod`
+- Parameters used:
+  - `api_key`: Your NASA API key
+  - `start_date`: Beginning date for image range
+  - `end_date`: Ending date for image range
+
+You can get your own API key at [https://api.nasa.gov](https://api.nasa.gov)
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v14+)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/nasa-posting-day.git
+cd nasa-posting-day
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Create an environment file with your NASA API key or update the key in app.component.ts
+
+4. Start the development server:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+5. Open your browser to `http://localhost:4200`
 
-## Code scaffolding
+## Project Structure
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- `src/app/app.component.ts` - Main component logic
+- `src/app/app.component.html` - Application template
+- `src/app/app.component.css` - Component-specific styles
+- `src/app/interfaces/posts.ts` - Interface for NASA post data
 
-```bash
-ng generate component component-name
-```
+## Future Enhancements
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- Individual post detail pages
+- Favorites/bookmarking functionality
+- Search and filter options
+- Dark/light theme toggle
 
-```bash
-ng generate --help
-```
+## License
 
-## Building
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-To build the project run:
+## Acknowledgments
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- NASA for providing the APOD API
+- Angular team for the framework and tools
